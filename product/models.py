@@ -12,7 +12,7 @@ class Product(models.Model):
         return self.name
     
 class ProductImages(models.Model):
-    product = models.ForeignKey(Product,related_name='images', on_delete=models.CASCADE)
+    product = models.ForeignKey(Product,related_name='images', on_delete=models.CASCADE,null=True,blank=True)
     image = models.ImageField( upload_to='products/product_images',null=True , blank=True )
 
     def __str__(self):
